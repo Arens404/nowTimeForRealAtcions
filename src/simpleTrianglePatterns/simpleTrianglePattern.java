@@ -3,10 +3,10 @@ package simpleTrianglePatterns;
 import java.util.Scanner;
 public class simpleTrianglePattern {
     public static void main(String[] args){
-        Scanner scan = new Scanner(System.in);
+        Scanner userInputScanner = new Scanner(System.in);
         System.out.print("Enter a number:");
         try{
-            int n = scan.nextInt();
+            int userInputScanner = scan.nextInt();
         } catch (Exception e) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
