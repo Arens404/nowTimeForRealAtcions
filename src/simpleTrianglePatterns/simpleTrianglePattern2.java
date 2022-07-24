@@ -7,12 +7,12 @@ public class simpleTrianglePattern2 {
         Scanner userInputScanner = new Scanner(System.in);
         System.out.print("Enter a number:");
         try{
-            int n = userInputScanner.nextInt();
+            int number = userInputScanner.nextInt();
         } catch (Exception e) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
-        for(int i = 1; i <= n; i++){
-            for(int j = i; j <= n; j++){
+        for(int i = 1; i <= number; i++){
+            for(int j = i; j <= number; j++){
                 System.out.print(" ");
             }
             for(int j = 1;j <= i; j++){
