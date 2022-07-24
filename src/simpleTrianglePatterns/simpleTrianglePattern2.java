@@ -7,9 +7,9 @@ public class simpleTrianglePattern2 {
         Scanner userInputScanner = new Scanner(System.in);
         System.out.print("Enter a number:");
         try{
-            int number = userInputScanner.nextInt();
-            for(int i = 1; i <= number; i++){
-                for(int j = i; j <= number; j++){
+            int UserInputNumber = userInputScanner.nextInt();
+            for(int i = 1; i <= UserInputNumber; i++){
+                for(int j = i; j <= UserInputNumber; j++){
                     System.out.print(" ");
                 }
                 for(int j = 1;j <= i; j++){
@@ -17,9 +17,9 @@ public class simpleTrianglePattern2 {
                 }
                 System.out.println();
             }
-        } catch (RuntimeException ex2){
+        } catch (RuntimeException exception2){
         System.out.println("Time out!");
-        } catch (Exception ex1) {
+        } catch (Exception exception1) {
         System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
