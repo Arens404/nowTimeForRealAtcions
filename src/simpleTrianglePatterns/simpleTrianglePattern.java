@@ -13,7 +13,7 @@ public class simpleTrianglePattern {
                     System.out.print("*");
                 }
             }     System.out.println();
-        } catch (InputMismatchException WrongUserInputMismatchException) {
+        } catch (InputMismatchException NoSuchElementException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
