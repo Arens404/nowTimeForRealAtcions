@@ -1,5 +1,6 @@
 package src.simpleTrianglePatterns;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class simpleTrianglePattern {
     public static void main(String[] args){
@@ -12,7 +13,7 @@ public class simpleTrianglePattern {
                     System.out.print("*");
                 }
             }     System.out.println();
-        } catch (Exception WrongUserInputMismatchException) {
+        } catch (InputMismatchException WrongUserInputMismatchException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
