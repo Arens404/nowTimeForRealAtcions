@@ -17,8 +17,6 @@ public class simpleTrianglePattern2 {
                 }
                 System.out.println();
             }
-        } catch (RuntimeException exception2){
-        System.out.println("Time out!");
         } catch (Exception exception1) {
         System.out.println("Wrong format! Please use numbers to enter the input!");
         }
