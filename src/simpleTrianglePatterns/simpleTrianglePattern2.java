@@ -17,8 +17,8 @@ public class simpleTrianglePattern2 {
                 }
                 System.out.println();
             }
-        } catch (Exception WrongFormatException) {
-        System.out.println("Wrong format! Please use numbers to enter the input!");
+        } catch (Exception InputMismatchException) {
+        System.out.println("Wrong format! Please use numbers!");
         }
     }
 }
