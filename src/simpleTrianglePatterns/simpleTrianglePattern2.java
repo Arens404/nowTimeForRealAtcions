@@ -18,8 +18,8 @@ public class simpleTrianglePattern2 {
                 }
                 System.out.println();
             }
-        } catch (InputMismatchException NoSuchElementException) {
-        System.out.println("Wrong format! Please use numbers!");
+        } catch (NumberFormatException IllegalArgumentException) {
+        System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
 }
