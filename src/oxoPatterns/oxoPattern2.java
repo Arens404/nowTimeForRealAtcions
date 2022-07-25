@@ -1,17 +1,17 @@
-package oxoPatterns;
+package src.oxoPatterns;
 
 import java.util.Scanner;
 
 public class oxoPattern2 {
     public static void main(String[] args) {
         try{
-            Scanner scan = new Scanner(System.in);
+            Scanner userInputScanner = new Scanner(System.in);
 
             System.out.print("Line:");
-            int n = scan.nextInt();
+            int userInputNumber = userInputScanner.nextInt();
             System.out.print("Column:");
-            int c = scan.nextInt();
-            for(int i = 1; i <= n; i++){
+            int c = userInputScanner.nextInt();
+            for(int i = 1; i <= userInputNumber; i++){
                 if( i % 3 == 0 || i % 5 == 0 || i % 6 == 0){
                     for(int j = 1; j <= c; j++){
                         System.out.print("III");
@@ -37,9 +37,8 @@ public class oxoPattern2 {
                 System.out.println();
 
             }
-        }catch (Exception e){
+        }catch (Exception WrongFormatException){
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
-        //uwu
     }
 }
