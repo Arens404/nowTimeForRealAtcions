@@ -30,7 +30,7 @@ public class pinCodeTask2 {
                 }
             }
         } catch (NumberFormatException IllegalArgumentException) {
-            System.out.println("Wrong format! Please use numbers to enter the input!");
+            System.out.println("Wrong format!Please use numbers to enter the input!");
         }
     }
 }
