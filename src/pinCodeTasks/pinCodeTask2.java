@@ -24,7 +24,7 @@ public class pinCodeTask2 {
                         System.out.println("The safe code is six number!");
                         break;
                     }
-                    else {
+                    else{
                         System.out.println("Wrong Code!");
                     }
                 }

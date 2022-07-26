@@ -27,7 +27,7 @@ public class pinCodeTask1 {
                     System.out.println("The pin code is four number!");
                     break;
                 }
-                else {
+                else{
                     System.out.println("Wrong pin!");}
             }
         }catch (NumberFormatException IllegalArgumentException) {
