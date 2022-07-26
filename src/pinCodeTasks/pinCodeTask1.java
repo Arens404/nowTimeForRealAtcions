@@ -6,33 +6,31 @@ public class pinCodeTask1 {
 
     public static void main(String[] args) {
         try{
-            Scanner scan = new Scanner(System.in);
-            //System.out.print("Enter your pin code:");
-            //int pin = scan.nextInt();
-            int truePinCode = 5619;
-            int pinTryCount = 2;
-            int realPinTryCount = 3;
+            Scanner userInputScanner = new Scanner(System.in);
+            int corrcetPinCode = 5619;
+            int pinGuessCount = 2;
+            int monitorPinGuessCount = 3;
             while(pinTryCount != 5){
-                System.out.print("U only have " + realPinTryCount + " chance\n");
+                System.out.print("U only have " + monitorPinGuessCount + " chance\n");
                 System.out.print("Enter your pin code:");
-                int pin = scan.nextInt();
-                pinTryCount++;
-                realPinTryCount--;
-                if(pinTryCount == 5){
+                int pinCode = userInputScanner.nextInt();
+                pinGuessCount++;
+                monitorPinGuessCount--;
+                if(pinGuessCount == 5){
                     System.out.println("Phone locked!");
                 }
-                else if(pinTryCount < 5 && pin == truePinCode){
+                else if(pinGuessCount < 5 && pinCode == corrcetPinCode){
                     System.out.println("Phone unlocked!");
                     break;
                 }
-                else if(pin <= 999 || pin >= 9999){
+                else if(pinCode <= 999 || pinCode >= 9999){
                     System.out.println("The pin code is four number!");
                     break;
                 }
                 else {
                     System.out.println("Wrong pin!");}
             }
-        }catch (Exception e){
+        }catch (NumberFormatException IllegalArgumentException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }

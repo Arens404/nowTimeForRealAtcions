@@ -5,25 +5,22 @@ import java.util.Scanner;
 public class pinCodeTask2 {
     public static void main(String[] args) {
         try{
-            Scanner scan = new Scanner(System.in);
-            int trueSafeCode = 777777;
-            int safeCodeCount = 0;
-
-
-            while(safeCodeCount != 77777){
+            Scanner userInputScanner = new Scanner(System.in);
+            int correctSafeCode = 777777;
+            int safeCodeGuessCount = 0;
+            while(safeCodeGuessCount != 77777){
                 System.out.print("Enter the safe code: ");
-                if(scan.hasNext("q")){
+                if(userInputScanner.hasNext("q")){
                     System.exit(0);
                 } else { }
-
-                int safe = scan.nextInt();
+                int safeCode = userInputScanner.nextInt();
                 {
-                    if(safe == trueSafeCode){
+                    if(safeCode == trueSafeCode){
                         System.out.println("Safe unlocked!");{
                             break;
                         }
                     }
-                    else if(safe <= 99999 || safe >= 999999){
+                    else if(safeCode <= 99999 || safeCode >= 999999){
                         System.out.println("The safe code is six number!");
                         break;
                     }
@@ -32,7 +29,7 @@ public class pinCodeTask2 {
                     }
                 }
             }
-        } catch (Exception e){
+        } catch (NumberFormatException IllegalArgumentException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
