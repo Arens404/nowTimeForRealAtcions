@@ -1,5 +1,6 @@
 package src.oxoPatterns;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class oxoPattern1 {
@@ -7,22 +8,22 @@ public class oxoPattern1 {
         Scanner userInputScanner = new Scanner(System.in);
         try{
             System.out.print("Line:");
-            int userInputNumbersOfLines = userInputScanner.nextInt();
+            int userInputLines = userInputScanner.nextInt();
             System.out.print("Column:");
-            int userInputNumbersOfColumns = userInputScanner.nextInt();
-            for(int i = 1; i <= userInputNumbersOfLines; i++){
+            int userInputColumns = userInputScanner.nextInt();
+            for(int i = 1; i <= userInputLines; i++){
                 if(i % 2 == 0){
-                    for(int j = 1; j <= userInputNumbersOfColumns; j++){
+                    for(int j = 1; j <= userInputColumns; j++){
                         System.out.print("xo");
                     }
                 } else {
-                    for(int j = 1; j <= userInputNumbersOfColumns; j++){
+                    for(int j = 1; j <= userInputColumns; j++){
                         System.out.print("ox");
                     }
                 }
                 System.out.println();
             }
-        } catch (NumberFormatException IllegalArgumentException) {
+        } catch (InputMismatchException IllegalArgumentException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
