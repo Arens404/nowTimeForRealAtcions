@@ -23,14 +23,11 @@ public class Circle {
         circleAlphaAngle = Integer.parseInt(userInputScanner.nextLine());
         double circleAlphaAngleInRadian = circleAlphaAngle*Math.PI/180;
         double circleArc = circleAlphaAngleInRadian*circleRadius;
-        System.out.println("How do you wanna print out the result?");
-        System.out.println("(Degrees or Radian)");
-        DegreesOrRadiant = userInputScanner.nextLine();
         switch (DegreesOrRadiant){
             case "Degrees" -> System.out.print(Math.toDegrees(circleArc));
             case "Radian" -> System.out.print(circleArc);
             default -> System.out.println("That's not an option please select from Degrees/Radiant options!");
-         }
+        }
         return circleAlphaAngleInRadian;
     }
 }
