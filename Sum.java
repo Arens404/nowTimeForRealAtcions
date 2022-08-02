@@ -23,21 +23,21 @@ public class Sum {
         }
         return arrayNumbersSum;
     }
-    public static void numbersCheck(ArrayList<Integer> numbers) {
-        for (int i = 0; i < numbers.stream().count(); i++) {
-            int currentNumber = numbers.get(i);
+    public static void numbersCheck(ArrayList<Integer> numbersOfInputArray) {
+        for (int i = 0; i < numbersOfInputArray.size(); i++) {
+            int currentNumber = numbersOfInputArray.get(i);
             int numberCheckCount = 0;
-            for (int j = 0; j < numbers.stream().count(); j++) {
-                if (currentNumber == numbers.get(j)) {
+            for (int j = 0; j < numbersOfInputArray.size(); j++) {
+                if (currentNumber == numbersOfInputArray.get(j)) {
                     numberCheckCount++;
                 }
                 if(numberCheckCount == 2){
-                    numbers.remove(j);
+                    numbersOfInputArray.remove(j);
                 }
             }
         }
-        for(int i = 0; i < numbers.stream().count(); i++){
-            System.out.println(numbers.get(i));
+        for(int i = 0; i < numbersOfInputArray.size(); i++){
+            System.out.println(numbersOfInputArray.get(i));
         }
     }
 
