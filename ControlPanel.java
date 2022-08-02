@@ -57,5 +57,5 @@ public class ControlPanel {
                     System.out.println("Tahts not a valid options, please select an available option!");
             }
         }
-    }
+}
 

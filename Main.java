@@ -28,5 +28,5 @@ public class Main {
             default -> System.out.println("This is not an option! Please select form the three option!");
             }
         }
-    }
+}
 

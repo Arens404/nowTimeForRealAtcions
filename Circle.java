@@ -34,5 +34,5 @@ public class Circle {
             default -> System.out.println("That's not an option please select from Degrees/Radiant options!");
         }
         return circleAlphaAngleInRadian;
-    }
+     }
 }
