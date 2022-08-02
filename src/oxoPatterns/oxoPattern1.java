@@ -2,7 +2,6 @@ package src.oxoPatterns;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 public class oxoPattern1 {
     public static void main(String[] args) {
         Scanner userInputScanner = new Scanner(System.in);

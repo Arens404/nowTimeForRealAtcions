@@ -35,7 +35,6 @@ public class oxoPattern2 {
                     }
                 }
                 System.out.println();
-
             }
         } catch (InputMismatchException IllegalArgumentException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
