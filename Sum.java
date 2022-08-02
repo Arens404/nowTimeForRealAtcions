@@ -40,5 +40,4 @@ public class Sum {
             System.out.println(numbersOfInputArray.get(i));
         }
     }
-
 }
