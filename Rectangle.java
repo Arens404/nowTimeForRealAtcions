@@ -1,17 +1,25 @@
 import java.util.Scanner;
 
 public class Rectangle {
-    static Scanner userInputScanner = new Scanner(System.in);
+    public static int userInputScanner(int userInput){
+        Scanner userInputScanner = new Scanner(System.in);
+        userInput = Integer.parseInt(userInputScanner.nextLine());
+
+        return userInput;
+    }
+
     public static int RectanglePerimeter(int rectangleLateralFace, int anotherRectangleLateralFace){
+
         System.out.print("Enter a number to calculate the rectangle perimeter:");
-        int SideOfaRectangle= Integer.parseInt(userInputScanner.nextLine());
+        int SideOfaRectangle = userInputScanner(rectangleLateralFace);
         System.out.print("Enter another number to calculate the rectangle perimeter:");
-        int AnotherSideOfaRectangle= Integer.parseInt(userInputScanner.nextLine());
+        int AnotherSideOfaRectangle = userInputScanner(anotherRectangleLateralFace);
         int perimeterResult = (AnotherSideOfaRectangle+SideOfaRectangle)*2;
 
         return perimeterResult;
     }
     public static int RectangleArea(int rectangleLateralFace, int anotherRectangleLateralFace){
+        Scanner userInputScanner = new Scanner(System.in);
         System.out.print("Enter a number to calculate the rectangle area:");
         int SideOfaRectangle = Integer.parseInt(userInputScanner.nextLine());
         System.out.print("Enter another number to calculate the rectangle area:");
@@ -31,6 +39,7 @@ public class Rectangle {
         return degs;
     }
     public double RectangleDiagonal(double rectangleLateralFace, double anotherRectangleLateralFace, String DegreesOrRadiant){
+        Scanner userInputScanner = new Scanner(System.in);
         System.out.print("Enter a number to calculate the rectangle area:");
         int SideOfaRectangle = Integer.parseInt(userInputScanner.nextLine());
         System.out.print("Enter another number to calculate the rectangle area:");

@@ -1,11 +1,22 @@
 import java.util.Scanner;
 
 public class ControlPanel {
-    static Scanner userInputScanner = new Scanner(System.in);
-    static Circle mainCircle = new Circle();
-    static Rectangle mainRectangle = new Rectangle();
+    public static int userInputScanner(int userInput){
+        Scanner userInputScanner = new Scanner(System.in);
+        userInput = Integer.parseInt(userInputScanner.nextLine());
+
+        return userInput;
+    }
+    public static String userInputScannerString(String userInput){
+        Scanner userInputScanner = new Scanner(System.in);
+        userInput = userInputScanner.nextLine();
+
+        return userInput;
+    }
     public static void controlPanelForOperations(int selectInputNumber){
-        int userInputNumberSelection = Integer.parseInt(userInputScanner.nextLine());
+        Circle mainCircle = new Circle();
+        Rectangle mainRectangle = new Rectangle();
+        int userInputNumberSelection = userInputScanner(selectInputNumber);
         switch (userInputNumberSelection) {
             case 1 -> {
                 double resultOfCirclePerimeter = mainCircle.CirclePerimeter(0);
@@ -16,8 +27,9 @@ public class ControlPanel {
                 System.out.println(resultOfCircleArea);
             }
             case 3 -> {
+                String DegreesOrRadianHelper = " ";
                 System.out.print("How do you wanna print out the result? (Degrees/Radian):");
-                String DegreesOrRadiantSelection = userInputScanner.nextLine();
+                String DegreesOrRadiantSelection = userInputScannerString(DegreesOrRadianHelper);
                 switch (DegreesOrRadiantSelection){
                     case "Degrees" -> {
                         double resultOfCircleArc = mainCircle.CircleArc(0, 0, "Degrees");

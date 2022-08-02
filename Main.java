@@ -1,8 +1,9 @@
 import java.util.Scanner;
 public class Main {
-    static Scanner userInputScanner = new Scanner(System.in);
-    static ControlPanel UserInputSelectOptionPanel = new ControlPanel();
+
     public static void main(String[] args) {
+        ControlPanel UserInputSelectOptionPanel = new ControlPanel();
+        Scanner userInputScanner = new Scanner(System.in);
         System.out.println("1 - Circle:");
         System.out.println("2 - Rectangle:");
         System.out.println("3 - Exit:");
@@ -15,9 +16,9 @@ public class Main {
                 UserInputSelectOptionPanel.controlPanelForOperations(userInputNumber);
                 }
             case 2 -> {
-                System.out.println(" 1*  Perimeter calculation");
-                System.out.println(" 2*  Area calculation");
-                System.out.println(" 3*  Diagonal calculation");
+                System.out.println(" 4*  Perimeter calculation");
+                System.out.println(" 5*  Area calculation");
+                System.out.println(" 6*  Diagonal calculation");
                 UserInputSelectOptionPanel.controlPanelForOperations(userInputNumber);
             }
             case 3 -> {
