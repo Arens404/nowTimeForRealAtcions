@@ -1,31 +1,25 @@
 import java.util.Scanner;
 
-public class Circle {
-    public static int userInputScanner(int userInput){
-        Scanner userInputScanner = new Scanner(System.in);
-        userInput = Integer.parseInt(userInputScanner.nextLine());
-
-        return userInput;
-    }
-    public static double CirclePerimeter(int circleRadius){
+public class Circle extends Main{
+    public double CirclePerimeter(){
         System.out.print("Enter the circle radius length:");
-        circleRadius = userInputScanner(circleRadius);
+        int circleRadius = scanner.nextInt();
         double circlePerimeter = 2*Math.PI*circleRadius;
 
         return circlePerimeter;
     }
-    public static double CircleArea(int circleRadius){
+    public double CircleArea(){
         System.out.print("Enter the circle radius length:");
-        circleRadius = userInputScanner(circleRadius);
+        int circleRadius = scanner.nextInt();
         double circleArea = Math.PI*circleRadius*circleRadius;
 
         return circleArea;
     }
-    public double CircleArc(int circleRadius, int circleAlphaAngle, String DegreesOrRadiant){
+    public double CircleArc(String DegreesOrRadiant){
         System.out.print("Enter the circle radius length:");
-        circleRadius = userInputScanner(circleRadius);
+         int circleRadius = scanner.nextInt();
         System.out.print("Enter the circle alpha angle size:");
-        circleAlphaAngle = userInputScanner(circleAlphaAngle);
+        int circleAlphaAngle = scanner.nextInt();
         double circleAlphaAngleInRadian = circleAlphaAngle*Math.PI/180;
         double circleArc = circleAlphaAngleInRadian*circleRadius;
         switch (DegreesOrRadiant){

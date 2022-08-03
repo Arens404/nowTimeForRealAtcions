@@ -1,36 +1,29 @@
 import java.util.Scanner;
 
-public class Rectangle {
-    public static int userInputScanner(int userInput){
-        Scanner userInputScanner = new Scanner(System.in);
-        userInput = Integer.parseInt(userInputScanner.nextLine());
+public class Rectangle extends Main{
 
-        return userInput;
-    }
-
-    public static int RectanglePerimeter(int rectangleLateralFace, int anotherRectangleLateralFace){
-
+    public int RectanglePerimeter(){
         System.out.print("Enter a number to calculate the rectangle perimeter:");
-        int SideOfaRectangle = userInputScanner(rectangleLateralFace);
+        int SideOfaRectangle = scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle perimeter:");
-        int AnotherSideOfaRectangle = userInputScanner(anotherRectangleLateralFace);
+        int AnotherSideOfaRectangle = scanner.nextInt();
         int perimeterResult = (AnotherSideOfaRectangle+SideOfaRectangle)*2;
 
         return perimeterResult;
     }
-    public static int RectangleArea(int rectangleLateralFace, int anotherRectangleLateralFace){
-        Scanner userInputScanner = new Scanner(System.in);
+    public int RectangleArea(){
+
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = Integer.parseInt(userInputScanner.nextLine());
+        int SideOfaRectangle = scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = Integer.parseInt(userInputScanner.nextLine());
+        int AnotherSideOfaRectangle = scanner.nextInt();
         int areaResult = SideOfaRectangle*AnotherSideOfaRectangle;
 
         return areaResult;
     }
-    public static double rectangleArcCoTangens(double RectangleArcCoTanegnt){
+    public double rectangleArcCoTangens(double RectangleArcCoTangent){
         double coTanA,rads, degs;
-        degs = RectangleArcCoTanegnt;
+        degs = RectangleArcCoTangent;
         rads = Math.toRadians(degs);
         coTanA = 1.0 / Math.tan(rads);
         rads = Math.atan(1 / coTanA);
@@ -38,19 +31,16 @@ public class Rectangle {
 
         return degs;
     }
-    public double RectangleDiagonal(double rectangleLateralFace, double anotherRectangleLateralFace, String DegreesOrRadiant){
-        Scanner userInputScanner = new Scanner(System.in);
+    public double RectangleDiagonal(String DegreesOrRadiant){
+
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = Integer.parseInt(userInputScanner.nextLine());
+        int SideOfaRectangle = scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = Integer.parseInt(userInputScanner.nextLine());
+        int AnotherSideOfaRectangle = scanner.nextInt();
         double RectangleDiagonalOperations = (SideOfaRectangle*SideOfaRectangle) + (AnotherSideOfaRectangle*AnotherSideOfaRectangle);
         double RectangleSqrt = Math.sqrt(RectangleDiagonalOperations);
         double RectangleAlphaTangense = RectangleSqrt/SideOfaRectangle;
         double RectangleShiftTanOperation = rectangleArcCoTangens(RectangleAlphaTangense);
-        System.out.println("How do you wanna print out the result?");
-        System.out.println("(Degrees or Radian)");
-        DegreesOrRadiant = userInputScanner.nextLine();
         switch (DegreesOrRadiant){
             case "Degrees" -> System.out.print(Math.toDegrees(RectangleShiftTanOperation));
             case "Radian" -> System.out.print(RectangleShiftTanOperation);
