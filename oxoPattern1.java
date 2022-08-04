@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class oxoPattern1 {
+    static Scanner userInputScanner = new Scanner(System.in);
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Select witch task u wanna try:");
@@ -16,7 +17,6 @@ public class oxoPattern1 {
         }
     }
     public static void oxoPatternTaskOne(){
-        Scanner userInputScanner = new Scanner(System.in);
         try{
             System.out.print("Line:");
             int userInputLines = userInputScanner.nextInt();
@@ -38,7 +38,6 @@ public class oxoPattern1 {
     }
     public static void oxoPatternTaskTwo(){
         try{
-            Scanner userInputScanner = new Scanner(System.in);
             System.out.print("Line:");
             int userInputLines = userInputScanner.nextInt();
             System.out.print("Column:");
