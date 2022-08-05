@@ -1,68 +1,68 @@
-import java.util.InputMismatchException;
+package pinCodeTasks;
 import java.util.Scanner;
 
 public class pinCodeMainTasks {
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        pinCodeMainTasks pinCodeTasks = new pinCodeMainTasks();
         System.out.print("Select witch task u wanna try:");
         try{
-            int UserInputContainer = scanner.nextInt();
-            switch (UserInputContainer){
-                case 1 -> pinCodeTaskOne();
-                case 2 -> pinCodeTaskTwo();
+            int UserInputSelectionInt = scanner.nextInt();
+            switch (UserInputSelectionInt){
+                case 1 -> pinCodeTasks.pinCodeTaskOne();
+                case 2 -> pinCodeTasks.pinCodeTaskTwo();
                 default -> System.out.println("U have only two option! Please select from taskOne or taskTwo");
             }
-        } catch (InputMismatchException IllegalArgumentException){
+        } catch (RuntimeException InputMismatchException){
             System.out.println("Please use numbers to select a task!");
         }
     }
-    public static void pinCodeTaskOne(){
+    public void pinCodeTaskOne(){
         try{
-            Scanner userInputScanner = new Scanner(System.in);
             int correctPinCode = 5619;
-            int pinCodeGuessCount = 2;
-            int indicatorPinGuessCount = 3;
-            while(pinCodeGuessCount != 5){
+            int correctPinCodeGuessCount = 5; int pinCodeGuessCount = 2; int indicatorPinGuessCount = 3;
+            int minimalPinCode = 999;  int maximumPinCode = 9999;
+            while(pinCodeGuessCount != correctPinCodeGuessCount){
                 System.out.print("U only have " + indicatorPinGuessCount + " chance\n");
                 System.out.print("Enter your pin code:");
-                int pinCodeGuessInput = Integer.parseInt(userInputScanner.nextLine());
+                int pinCodeGuessInput = Integer.parseInt(scanner.nextLine());
                 pinCodeGuessCount++;
                 indicatorPinGuessCount--;
-                if(pinCodeGuessCount == 5){
+                if(pinCodeGuessCount == correctPinCodeGuessCount){
                     System.out.println("Phone locked!");
                 }
-                else if(pinCodeGuessCount < 5 && pinCodeGuessInput == correctPinCode){
+                else if(pinCodeGuessCount < correctPinCodeGuessCount && pinCodeGuessInput == correctPinCode){
                     System.out.println("Phone unlocked!");
                     break;
                 }
-                else if(pinCodeGuessInput <= 999 || pinCodeGuessInput >= 9999){
+                else if(pinCodeGuessInput <= minimalPinCode || pinCodeGuessInput >= maximumPinCode){
                     System.out.println("The pin code is four number!");
                     break;
                 }
                 else {
                     System.out.println("Wrong pin!");}
             }
-        }catch (IllegalArgumentException NumberFormatException){
+        }catch (RuntimeException NumberFormatException){
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
-    public static void pinCodeTaskTwo(){
+    public void pinCodeTaskTwo(){
         try{
-            Scanner userInputScanner = new Scanner(System.in);
             int correctSafeCode = 777777;
-            int UserGuessInput = 0;
+            int UserGuessInput = 0; int UserGuessInputMax = 999999; int UserGuessInputMin = 99999;
             while(correctSafeCode != UserGuessInput){
                 System.out.print("Enter the safe code: ");
-                if(userInputScanner.hasNext("q")){
+                if(scanner.hasNext("q")){
                     System.exit(0);
                 } else { }
-                UserGuessInput = userInputScanner.nextInt();
+                UserGuessInput = scanner.nextInt();
                 {
                     if(UserGuessInput == correctSafeCode){
                         System.out.println("Safe unlocked!");
                         System.exit(0);
                     }
-                    else if(UserGuessInput <= 99999 || UserGuessInput >= 999999){
+                    else if(UserGuessInput <= UserGuessInputMin || UserGuessInput >= UserGuessInputMax){
                         System.out.println("The safe code is six number!");
                         System.exit(0);
                     }
@@ -71,7 +71,7 @@ public class pinCodeMainTasks {
                     }
                 }
             }
-        } catch (NumberFormatException IllegalArgumentException){
+        } catch (RuntimeException NumberFormatException){
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
