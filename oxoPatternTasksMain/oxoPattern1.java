@@ -1,22 +1,23 @@
-import java.util.InputMismatchException;
+package oxoPatternTasksMain;
 import java.util.Scanner;
 public class oxoPattern1 {
-    static Scanner userInputScanner = new Scanner(System.in);
+    final Scanner userInputScanner = new Scanner(System.in);
     public static void main(String[] args) {
+        oxoPattern1 TasksFromChezo = new oxoPattern1();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Select witch task u wanna try:");
         try{
-            int UserInputContainer = scanner.nextInt();
-            switch (UserInputContainer){
-                case 1 -> oxoPatternTaskOne();
-                case 2 -> oxoPatternTaskTwo();
+            int UserInputSelectionInt = scanner.nextInt();
+            switch (UserInputSelectionInt){
+                case 1 -> TasksFromChezo.oxoPatternTaskOne();
+                case 2 -> TasksFromChezo.oxoPatternTaskTwo();
                 default -> System.out.println("U have only two option! Please select from taskOne or taskTwo");
             }
-        } catch (InputMismatchException IllegalArgumentException){
+        } catch (RuntimeException InputMismatchException){
             System.out.println("Please use numbers to select a task!");
         }
     }
-    public static void oxoPatternTaskOne(){
+    public void oxoPatternTaskOne(){
         try{
             System.out.print("Line:");
             int userInputLines = userInputScanner.nextInt();
@@ -32,11 +33,11 @@ public class oxoPattern1 {
                 }
             System.out.println();
             }
-        } catch (InputMismatchException IllegalArgumentException) {
+        } catch (RuntimeException InputMismatchException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
-    public static void oxoPatternTaskTwo(){
+    public void oxoPatternTaskTwo(){
         try{
             System.out.print("Line:");
             int userInputLines = userInputScanner.nextInt();
@@ -66,7 +67,7 @@ public class oxoPattern1 {
                 }
                 System.out.println();
             }
-        } catch (InputMismatchException IllegalArgumentException) {
+        } catch (RuntimeException InputMismatchException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
