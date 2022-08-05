@@ -1,10 +1,9 @@
 package oxoPatternTasksMain;
 import java.util.Scanner;
 public class oxoPattern1 {
-    final Scanner userInputScanner = new Scanner(System.in);
+    static Scanner userInputScanner = new Scanner(System.in);
     public static void main(String[] args) {
         oxoPattern1 TasksFromChezo = new oxoPattern1();
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Select witch task u wanna try:");
         try{
             int UserInputSelectionInt = scanner.nextInt();
