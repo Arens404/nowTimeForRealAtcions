@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class ControlPanel extends Main{
     public void controlPanelForOperations(int selectInputNumber){
         Circle mainCircle = new Circle();
@@ -15,7 +13,6 @@ public class ControlPanel extends Main{
                 System.out.println(resultOfCircleArea);
             }
             case 3 -> {
-                String DegreesOrRadianHelper = " ";
                 System.out.print("How do you wanna print out the result? (Degrees/Radian):");
                 String DegreesOrRadiantSelection = scanner.nextLine();
                 switch (DegreesOrRadiantSelection){
@@ -40,7 +37,6 @@ public class ControlPanel extends Main{
                 System.out.println(resultOfSquareArea);
             }
             case 6 -> {
-                String DegreesOrRadianHelper = " ";
                 System.out.print("How do you wanna print out the result? (Degrees/Radian):");
                 String DegreesOrRadiantSelection = scanner.nextLine();
                 switch (DegreesOrRadiantSelection){

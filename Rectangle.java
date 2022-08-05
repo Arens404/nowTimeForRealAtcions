@@ -37,8 +37,8 @@ public class Rectangle extends Main{
         int SideOfaRectangle = scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle area:");
         int AnotherSideOfaRectangle = scanner.nextInt();
-        double RectangleDiagonalOperations = (SideOfaRectangle*SideOfaRectangle) + (AnotherSideOfaRectangle*AnotherSideOfaRectangle);
-        double RectangleSqrt = Math.sqrt(RectangleDiagonalOperations);
+        double RectangleDiagonalOperationOfDiagonal = (SideOfaRectangle*SideOfaRectangle) + (AnotherSideOfaRectangle*AnotherSideOfaRectangle);
+        double RectangleSqrt = Math.sqrt(RectangleDiagonalOperationOfDiagonal);
         double RectangleAlphaTangense = RectangleSqrt/SideOfaRectangle;
         double RectangleShiftTanOperation = rectangleArcCoTangens(RectangleAlphaTangense);
         switch (DegreesOrRadiant){
@@ -46,6 +46,6 @@ public class Rectangle extends Main{
             case "Radian" -> System.out.print(RectangleShiftTanOperation);
             default -> System.out.println("That's not an option please select from Degrees/Radiant options!");
         }
-        return RectangleDiagonalOperations;
+        return RectangleDiagonalOperationOfDiagonal;
     }
 }

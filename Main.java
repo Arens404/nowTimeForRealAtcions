@@ -3,12 +3,11 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         ControlPanel UserInputSelectOptionPanel = new ControlPanel();
-        Scanner userInputScanner = new Scanner(System.in);
         System.out.println("1 - Circle:");
         System.out.println("2 - Rectangle:");
         System.out.println("3 - Exit:");
         try{
-            int userInputNumber = Integer.parseInt(userInputScanner.nextLine());
+            int userInputNumber = Integer.parseInt(scanner.nextLine());
             switch (userInputNumber){
                 case 1 -> {
                     System.out.println(" 1*  Perimeter calculation");
@@ -28,7 +27,7 @@ public class Main {
                 }
                 default -> System.out.println("This is not an option! Please select form the three option!");
             }
-        } catch (NumberFormatException IllegalArgumentException){
+        } catch (RuntimeException NumberFormatException){
             System.out.println("Wrong format! Please Enter numbers!");
         }
     }

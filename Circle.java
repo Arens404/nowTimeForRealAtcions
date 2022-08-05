@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Circle extends Main{
     public double CirclePerimeter(){
         System.out.print("Enter the circle radius length:");
