@@ -1,5 +1,7 @@
 import pinCodeTasks.Setter;
 
+import java.util.Scanner;
+
 public class pinCodeMainTasks {
     private Setter scanner = new Setter();
     public static void main(String[] args) {
@@ -47,11 +49,12 @@ public class pinCodeMainTasks {
     }
     public void pinCodeTaskTwo(){
         try{
+            Scanner quitScanner = new Scanner(System.in);
             int correctSafeCode = 777777;
             int UserGuessInput = 0; int UserGuessInputMax = 999999; int UserGuessInputMin = 99999;
             while(correctSafeCode != UserGuessInput){
                 System.out.print("Enter the safe code: ");
-                if(scanner.hasNext(scanner.nextLine())){
+                if(quitScanner.hasNext("q")){
                     System.exit(0);
                 } else { }
                 UserGuessInput = scanner.input();
