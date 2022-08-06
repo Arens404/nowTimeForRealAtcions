@@ -1,14 +1,12 @@
-package pinCodeTasks;
-import java.util.Scanner;
+import pinCodeTasks.Setter;
 
 public class pinCodeMainTasks {
-    static Scanner scanner = new Scanner(System.in);
-
+    private Setter scanner = new Setter();
     public static void main(String[] args) {
         pinCodeMainTasks pinCodeTasks = new pinCodeMainTasks();
         System.out.print("Select witch task u wanna try:");
         try{
-            int UserInputSelectionInt = scanner.nextInt();
+            int UserInputSelectionInt = pinCodeTasks.scanner.input();
             switch (UserInputSelectionInt){
                 case 1 -> pinCodeTasks.pinCodeTaskOne();
                 case 2 -> pinCodeTasks.pinCodeTaskTwo();
@@ -26,7 +24,7 @@ public class pinCodeMainTasks {
             while(pinCodeGuessCount != correctPinCodeGuessCount){
                 System.out.print("U only have " + indicatorPinGuessCount + " chance\n");
                 System.out.print("Enter your pin code:");
-                int pinCodeGuessInput = Integer.parseInt(scanner.nextLine());
+                int pinCodeGuessInput = scanner.input();
                 pinCodeGuessCount++;
                 indicatorPinGuessCount--;
                 if(pinCodeGuessCount == correctPinCodeGuessCount){
@@ -53,10 +51,10 @@ public class pinCodeMainTasks {
             int UserGuessInput = 0; int UserGuessInputMax = 999999; int UserGuessInputMin = 99999;
             while(correctSafeCode != UserGuessInput){
                 System.out.print("Enter the safe code: ");
-                if(scanner.hasNext("q")){
+                if(scanner.hasNext(scanner.nextLine())){
                     System.exit(0);
                 } else { }
-                UserGuessInput = scanner.nextInt();
+                UserGuessInput = scanner.input();
                 {
                     if(UserGuessInput == correctSafeCode){
                         System.out.println("Safe unlocked!");
