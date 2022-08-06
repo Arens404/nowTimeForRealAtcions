@@ -1,13 +1,13 @@
-package oxoPatternTasksMain;
-import java.util.Scanner;
-public class oxoPattern1 {
-    final Scanner userInputScanner = new Scanner(System.in);
+import oxoPatternTasksMain.Setter;
+
+public class oxoPattern1{
+    private Setter scanner= new Setter();
+
     public static void main(String[] args) {
         oxoPattern1 TasksFromChezo = new oxoPattern1();
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Select witch task u wanna try:");
         try{
-            int UserInputSelectionInt = scanner.nextInt();
+            int UserInputSelectionInt = TasksFromChezo.scanner.input();
             switch (UserInputSelectionInt){
                 case 1 -> TasksFromChezo.oxoPatternTaskOne();
                 case 2 -> TasksFromChezo.oxoPatternTaskTwo();
@@ -20,9 +20,9 @@ public class oxoPattern1 {
     public void oxoPatternTaskOne(){
         try{
             System.out.print("Line:");
-            int userInputLines = userInputScanner.nextInt();
+            int userInputLines = scanner.input();
             System.out.print("Column:");
-            int userInputColumns = userInputScanner.nextInt();
+            int userInputColumns = scanner.input();
             for(int i = 1; i <= userInputLines; i++){
                 for(int j = 1; j <= userInputColumns; j++){
                     if(i % 2 == 0){
@@ -40,9 +40,9 @@ public class oxoPattern1 {
     public void oxoPatternTaskTwo(){
         try{
             System.out.print("Line:");
-            int userInputLines = userInputScanner.nextInt();
+            int userInputLines = scanner.input();
             System.out.print("Column:");
-            int userInputColumns = userInputScanner.nextInt();
+            int userInputColumns = scanner.input();
             for(int i = 1; i <= userInputLines; i++){
                 if( i % 3 == 0 || i % 5 == 0 || i % 6 == 0){
                     for(int j = 1; j <= userInputColumns; j++){
