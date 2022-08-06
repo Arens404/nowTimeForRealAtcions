@@ -1,13 +1,14 @@
-import java.util.Scanner;
+
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
+    private Setter scanner = new Setter();
     public static void main(String[] args) {
+        Main main = new Main();
         ControlPanel UserInputSelectOptionPanel = new ControlPanel();
         System.out.println("1 - Circle:");
         System.out.println("2 - Rectangle:");
         System.out.println("3 - Exit:");
         try{
-            int userInputNumber = Integer.parseInt(scanner.nextLine());
+            int userInputNumber = main.scanner.input();
             switch (userInputNumber){
                 case 1 -> {
                     System.out.println(" 1*  Perimeter calculation");

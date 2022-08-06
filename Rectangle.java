@@ -1,12 +1,10 @@
-import java.util.Scanner;
-
-public class Rectangle extends Main{
-
+public class Rectangle{
+    private Setter scanner = new Setter();
     public int RectanglePerimeter(){
         System.out.print("Enter a number to calculate the rectangle perimeter:");
-        int SideOfaRectangle = scanner.nextInt();
+        int SideOfaRectangle = scanner.input();
         System.out.print("Enter another number to calculate the rectangle perimeter:");
-        int AnotherSideOfaRectangle = scanner.nextInt();
+        int AnotherSideOfaRectangle = scanner.input();
         int perimeterResult = (AnotherSideOfaRectangle+SideOfaRectangle)*2;
 
         return perimeterResult;
@@ -14,9 +12,9 @@ public class Rectangle extends Main{
     public int RectangleArea(){
 
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = scanner.nextInt();
+        int SideOfaRectangle = scanner.input();
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = scanner.nextInt();
+        int AnotherSideOfaRectangle = scanner.input();
         int areaResult = SideOfaRectangle*AnotherSideOfaRectangle;
 
         return areaResult;
@@ -34,9 +32,9 @@ public class Rectangle extends Main{
     public double RectangleDiagonal(String DegreesOrRadiant){
 
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = scanner.nextInt();
+        int SideOfaRectangle = scanner.input();
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = scanner.nextInt();
+        int AnotherSideOfaRectangle = scanner.input();
         double RectangleDiagonalOperationOfDiagonal = (SideOfaRectangle*SideOfaRectangle) + (AnotherSideOfaRectangle*AnotherSideOfaRectangle);
         double RectangleSqrt = Math.sqrt(RectangleDiagonalOperationOfDiagonal);
         double RectangleAlphaTangense = RectangleSqrt/SideOfaRectangle;

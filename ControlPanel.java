@@ -1,8 +1,9 @@
-public class ControlPanel extends Main{
+public class ControlPanel{
+    Setter scanner = new Setter();
     public void controlPanelForOperations(int selectInputNumber){
         Circle mainCircle = new Circle();
         Rectangle mainRectangle = new Rectangle();
-        int userInputNumberSelection = scanner.nextInt();
+        int userInputNumberSelection = scanner.input();
         switch (userInputNumberSelection) {
             case 1 -> {
                 double resultOfCirclePerimeter = mainCircle.CirclePerimeter();
@@ -14,7 +15,7 @@ public class ControlPanel extends Main{
             }
             case 3 -> {
                 System.out.print("How do you wanna print out the result? (Degrees/Radian):");
-                String DegreesOrRadiantSelection = scanner.nextLine();
+                String DegreesOrRadiantSelection = scanner.inputLine();
                 switch (DegreesOrRadiantSelection){
                     case "Degrees" -> {
                         String Indicator = "Degrees";
@@ -38,7 +39,7 @@ public class ControlPanel extends Main{
             }
             case 6 -> {
                 System.out.print("How do you wanna print out the result? (Degrees/Radian):");
-                String DegreesOrRadiantSelection = scanner.nextLine();
+                String DegreesOrRadiantSelection = scanner.inputLine();
                 switch (DegreesOrRadiantSelection){
                     case "Degrees" -> {
                         String Indicator = "Degrees";
