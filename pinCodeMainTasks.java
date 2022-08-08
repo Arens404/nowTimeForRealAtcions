@@ -1,5 +1,6 @@
 import pinCodeTasks.Setter;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class pinCodeMainTasks {
@@ -14,7 +15,7 @@ public class pinCodeMainTasks {
                 case 2 -> pinCodeTasks.pinCodeTaskTwo();
                 default -> System.out.println("U have only two option! Please select from taskOne or taskTwo");
             }
-        } catch (RuntimeException InputMismatchException){
+        } catch (InputMismatchException InputMismatchException){
             System.out.println("Please use numbers to select a task!");
         }
     }
@@ -43,7 +44,7 @@ public class pinCodeMainTasks {
                 else {
                     System.out.println("Wrong pin!");}
             }
-        }catch (RuntimeException NumberFormatException){
+        }catch (NumberFormatException NumberFormatException){
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
@@ -72,7 +73,7 @@ public class pinCodeMainTasks {
                     }
                 }
             }
-        } catch (RuntimeException NumberFormatException){
+        } catch (NumberFormatException NumberFormatException){
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
