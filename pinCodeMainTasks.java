@@ -9,8 +9,8 @@ public class pinCodeMainTasks {
         pinCodeMainTasks pinCodeTasks = new pinCodeMainTasks();
         System.out.print("Select witch task u wanna try:");
         try{
-            int UserInputSelectionInt = pinCodeTasks.scanner.input();
-            switch (UserInputSelectionInt){
+            int UserInputSelection = pinCodeTasks.scanner.input();
+            switch (UserInputSelection){
                 case 1 -> pinCodeTasks.pinCodeTaskOne();
                 case 2 -> pinCodeTasks.pinCodeTaskTwo();
                 default -> System.out.println("U have only two option! Please select from taskOne or taskTwo");
