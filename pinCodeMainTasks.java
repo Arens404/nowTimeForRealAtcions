@@ -1,15 +1,13 @@
-import pinCodeTasks.Setter;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class pinCodeMainTasks {
-    private Setter scanner = new Setter();
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         pinCodeMainTasks pinCodeTasks = new pinCodeMainTasks();
         System.out.print("Select witch task u wanna try:");
         try{
-            int UserInputSelection = pinCodeTasks.scanner.input();
+            int UserInputSelection = scanner.nextInt();
             switch (UserInputSelection){
                 case 1 -> pinCodeTasks.pinCodeTaskOne();
                 case 2 -> pinCodeTasks.pinCodeTaskTwo();
@@ -27,7 +25,7 @@ public class pinCodeMainTasks {
             while(pinCodeGuessCount != correctPinCodeGuessCount){
                 System.out.print("U only have " + indicatorPinGuessCount + " chance\n");
                 System.out.print("Enter your pin code:");
-                int pinCodeGuessInput = scanner.input();
+                int pinCodeGuessInput = scanner.nextInt();
                 pinCodeGuessCount++;
                 indicatorPinGuessCount--;
                 if(pinCodeGuessCount == correctPinCodeGuessCount){
@@ -58,7 +56,7 @@ public class pinCodeMainTasks {
                 if(quitScanner.hasNext("q")){
                     System.exit(0);
                 } else { }
-                UserGuessInput = scanner.input();
+                UserGuessInput = scanner.nextInt();
                 {
                     if(UserGuessInput == correctSafeCode){
                         System.out.println("Safe unlocked!");
