@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SimpleTreePatternMain {
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -15,7 +15,7 @@ public class SimpleTreePatternMain {
                 case 2 -> simpleTreePatternTwo();
                 default -> System.out.println("U have only two option! Please select from taskOne or taskTwo");
             }
-        } catch (InputMismatchException IllegalArgumentException) {
+        } catch (InputMismatchException InputMismatchException) {
             System.out.println("Please use numbers to select a task!");
         }
     }
@@ -45,7 +45,7 @@ public class SimpleTreePatternMain {
                     System.out.println();
                 }
             }
-        } catch (RuntimeException InputMismatchException) {
+        } catch (InputMismatchException InputMismatchException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
@@ -73,7 +73,7 @@ public class SimpleTreePatternMain {
                 }
                 System.out.println();
             }
-        } catch (RuntimeException InputMismatchException) {
+        } catch (InputMismatchException InputMismatchException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
