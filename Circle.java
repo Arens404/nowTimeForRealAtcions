@@ -1,23 +1,24 @@
 public class Circle{
+    public Planefigures planeFiguresObject = new Planefigures();
     public double CirclePerimeter(){
         System.out.print("Enter the circle radius length:");
-        int circleRadius = Planefigures.scanner.nextInt();
+        int circleRadius = planeFiguresObject.setScanner();
         double circlePerimeter = 2*Math.PI*circleRadius;
 
         return circlePerimeter;
     }
     public double CircleArea(){
         System.out.print("Enter the circle radius length:");
-        int circleRadius = Planefigures.scanner.nextInt();
+        int circleRadius = planeFiguresObject.setScanner();
         double circleArea = Math.PI*circleRadius*circleRadius;
 
         return circleArea;
     }
     public double CircleArc(String DegreesOrRadiant){
         System.out.print("Enter the circle radius length:");
-         int circleRadius = Planefigures.scanner.nextInt();
+         int circleRadius = planeFiguresObject.setScanner();
         System.out.print("Enter the circle alpha angle size:");
-        int circleAlphaAngle = Planefigures.scanner.nextInt();
+        int circleAlphaAngle = planeFiguresObject.setScanner();
         double circleAlphaAngleInRadian = circleAlphaAngle*Math.PI/180;
         double circleArc = circleAlphaAngleInRadian*circleRadius;
         switch (DegreesOrRadiant){
