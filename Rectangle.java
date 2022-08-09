@@ -1,9 +1,9 @@
-public class Rectangle extends Planefigures{
+public class Rectangle{
     public int RectanglePerimeter(){
         System.out.print("Enter a number to calculate the rectangle perimeter:");
-        int SideOfaRectangle = scanner.nextInt();
+        int SideOfaRectangle = Planefigures.scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle perimeter:");
-        int AnotherSideOfaRectangle = scanner.nextInt();
+        int AnotherSideOfaRectangle = Planefigures.scanner.nextInt();
         int perimeterResult = (AnotherSideOfaRectangle+SideOfaRectangle)*2;
 
         return perimeterResult;
@@ -11,9 +11,9 @@ public class Rectangle extends Planefigures{
     public int RectangleArea(){
 
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = scanner.nextInt();
+        int SideOfaRectangle = Planefigures.scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = scanner.nextInt();
+        int AnotherSideOfaRectangle = Planefigures.scanner.nextInt();
         int areaResult = SideOfaRectangle*AnotherSideOfaRectangle;
 
         return areaResult;
@@ -31,9 +31,9 @@ public class Rectangle extends Planefigures{
     public double RectangleDiagonal(String DegreesOrRadiant){
 
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = scanner.nextInt();
+        int SideOfaRectangle = Planefigures.scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = scanner.nextInt();
+        int AnotherSideOfaRectangle = Planefigures.scanner.nextInt();
         double RectangleDiagonalOperationOfDiagonal = (SideOfaRectangle*SideOfaRectangle) + (AnotherSideOfaRectangle*AnotherSideOfaRectangle);
         double RectangleSqrt = Math.sqrt(RectangleDiagonalOperationOfDiagonal);
         double RectangleAlphaTangense = RectangleSqrt/SideOfaRectangle;
