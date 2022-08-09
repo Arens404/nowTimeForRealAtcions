@@ -1,7 +1,7 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class oxoPattern1{
-
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         oxoPattern1 TasksFromChezo = new oxoPattern1();
@@ -13,7 +13,7 @@ public class oxoPattern1{
                 case 2 -> TasksFromChezo.oxoPatternTaskTwo();
                 default -> System.out.println("U have only two option! Please select from taskOne or taskTwo");
             }
-        } catch (RuntimeException InputMismatchException){
+        } catch (InputMismatchException InputMismatchException){
             System.out.println("Please use numbers to select a task!");
         }
     }
@@ -33,7 +33,7 @@ public class oxoPattern1{
                 }
             System.out.println();
             }
-        } catch (RuntimeException InputMismatchException) {
+        } catch (InputMismatchException InputMismatchException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
@@ -67,7 +67,7 @@ public class oxoPattern1{
                 }
                 System.out.println();
             }
-        } catch (RuntimeException InputMismatchException) {
+        } catch (InputMismatchException InputMismatchException) {
             System.out.println("Wrong format! Please use numbers to enter the input!");
         }
     }
