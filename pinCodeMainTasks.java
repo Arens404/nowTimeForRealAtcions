@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class pinCodeMainTasks {
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         pinCodeMainTasks pinCodeTasks = new pinCodeMainTasks();
         System.out.print("Select witch task u wanna try:");
