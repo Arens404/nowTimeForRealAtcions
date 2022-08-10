@@ -1,11 +1,7 @@
 import java.util.Scanner;
 
 public class Planefigures {
-    private static final Scanner scanner = new Scanner(System.in);
-    public int setScanner(){
-         int scannerInput = scanner.nextInt();
-         return scannerInput;
-     }
+    protected static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("1 - Circle:");
         System.out.println("2 - Rectangle:");

@@ -1,10 +1,9 @@
-public class Rectangle{
-    public Planefigures planeFiguresObject = new Planefigures();
+public class Rectangle extends Planefigures{
     public int RectanglePerimeter(){
         System.out.print("Enter a number to calculate the rectangle perimeter:");
-        int SideOfaRectangle = planeFiguresObject.setScanner();
+        int SideOfaRectangle = scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle perimeter:");
-        int AnotherSideOfaRectangle = planeFiguresObject.setScanner();
+        int AnotherSideOfaRectangle = scanner.nextInt();
         int perimeterResult = (AnotherSideOfaRectangle+SideOfaRectangle)*2;
 
         return perimeterResult;
@@ -12,9 +11,9 @@ public class Rectangle{
     public int RectangleArea(){
 
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = planeFiguresObject.setScanner();
+        int SideOfaRectangle = scanner.nextInt();
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = planeFiguresObject.setScanner();
+        int AnotherSideOfaRectangle = scanner.nextInt();
         int areaResult = SideOfaRectangle*AnotherSideOfaRectangle;
 
         return areaResult;
@@ -32,9 +31,9 @@ public class Rectangle{
     public double RectangleDiagonal(String DegreesOrRadiant){
 
         System.out.print("Enter a number to calculate the rectangle area:");
-        int SideOfaRectangle = planeFiguresObject.setScanner();
+        int SideOfaRectangle = scanner.nextInt();;
         System.out.print("Enter another number to calculate the rectangle area:");
-        int AnotherSideOfaRectangle = planeFiguresObject.setScanner();
+        int AnotherSideOfaRectangle = scanner.nextInt();
         double RectangleDiagonalOperationOfDiagonal = (SideOfaRectangle*SideOfaRectangle) + (AnotherSideOfaRectangle*AnotherSideOfaRectangle);
         double RectangleSqrt = Math.sqrt(RectangleDiagonalOperationOfDiagonal);
         double RectangleAlphaTangense = RectangleSqrt/SideOfaRectangle;
