@@ -2,17 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sum {
+    private List numbers = new ArrayList<>();
+    private int[] inputNumbers = {1, 11, 22, 54, 21, 11, 78};
     public static void main(String[] args) {
         Sum sum = new Sum();
         int[] arrayNumbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         System.out.println(sum.numbersSum(arrayNumbers));
 
-        List numbers = new ArrayList<>();
-        int[] inputNumbers = {1, 11, 22, 54, 21, 11, 78};
-        for(int i = 0; i < inputNumbers.length; i++){
-            numbers.add(inputNumbers[i]);
+
+        for(int i = 0; i < sum.inputNumbers.length; i++){
+            sum.numbers.add(sum.inputNumbers[i]);
         }
-        sum.numbersCheck((ArrayList<Integer>) numbers);
+        sum.numbersCheck((ArrayList<Integer>) sum.numbers);
     }
     public int numbersSum(int[] numbersArray){
         int ArrayNumberSum = 0;
