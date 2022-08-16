@@ -1,32 +1,63 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //Task 1.
-        HashMap<String, String> FirstHashMap = new HashMap<String, String>();
-        FirstHashMap.put("978-1-60309-452-8", "A letter to Jo");
-        FirstHashMap.put("978-1-60309-459-7", "Lupus");
-        FirstHashMap.put("978-1-60309-444-3", "Red Panda and Moon Bear");
-        FirstHashMap.put("978-1-60309-461-0", "The Lab");
-        //Task 2.
-        for (String i : FirstHashMap.keySet()) {
-            System.out.println(FirstHashMap.get(i) + "(ISBN: " + i + ")");
-        }
-        //Task 3.
-        FirstHashMap.remove("978-1-60309-444-3", "Red Panda and Moon Bear");
-        //Task 4.
-        FirstHashMap.remove("978-1-60309-461-0","The Lab");
-        //Task 5.
-        FirstHashMap.put("978-1-60309-450-4", "They Called Us Enemy");
-        FirstHashMap.put("978-1-60309-453-5", "Why Did We Trust Him?");
-        //Task 6.
-        if(FirstHashMap.containsValue(FirstHashMap.get("478-0-61159-424-8"))){
-            System.out.println("True");
-        } else {
-            System.out.println("False");
-        }
-        //Task 7.
-        System.out.println(FirstHashMap.get("978-1-60309-453-5"));
+        Scanner scanner = new Scanner(System.in);
+        HashMap<String, String> telephoneNumbers = new HashMap<String, String>();
+        telephoneNumbers.put("William A. Lathan", "405-709-1865");
+        telephoneNumbers.put("John K. Miller", "402-247-8568");
+        telephoneNumbers.put("Hortensia E. Foster", "606-481-6467");
+        telephoneNumbers.put("Amanda D. Newland", "319-243-5613");
+        telephoneNumbers.put("Brooke P. Askew", "307-687-2982");
+        System.out.print("Select key:");
+        String keySelect = scanner.nextLine();
+        switch (keySelect){
+            case "William A. Lathan" -> {
+                System.out.println("PhoneNumber or Name? (P/N)");//2
+                if(scanner.hasNext("P")){
+                    System.out.println(telephoneNumbers.get("William A. Lathan"));
+                } else if (scanner.hasNext("N")) {
+                    System.out.println((telephoneNumbers.keySet().toArray()[2]));
+                }
+            }
+            case "John K. Miller" -> {
+                System.out.println("PhoneNumber or Name? (P/N)");
+                if(scanner.hasNext("P")){
+                    System.out.println(telephoneNumbers.get("John K. Miller"));//0
+                } else if (scanner.hasNext("N")) {
+                    System.out.println((telephoneNumbers.keySet().toArray()[0]));
+                }
+            }
+            case "Hortensia E. Foster" -> {
+                System.out.println("PhoneNumber or Name? (P/N)");
+                if(scanner.hasNext("P")){
+                    System.out.println("Hortensia E. Foster");
+                } else if (scanner.hasNext("N")) {
+                    System.out.println((telephoneNumbers.keySet().toArray()[4]));
+                }
+            }
+            case "Amanda D. Newland" -> {
+                System.out.println("PhoneNumber or Name? (P/N)");
+                if(scanner.hasNext("P")){
+                    System.out.println(telephoneNumbers.get("Amanda D. Newland"));
+                } else if (scanner.hasNext("N")) {
+                    System.out.println((telephoneNumbers.keySet().toArray()[3]));
+                }
 
+            }
+            case "Brooke P. Askew" -> {
+                System.out.println("PhoneNumber or Name? (P/N)");
+                if(scanner.hasNext("P")){
+                    System.out.println(telephoneNumbers.get("Brooke P. Askew"));//1
+                } else if (scanner.hasNext("N")) {
+                    System.out.println((telephoneNumbers.keySet().toArray()[1]));
+                }
+
+            }
+            default -> {
+                System.out.println("I dont have this phone number and name!");
+            }
+        }
     }
 }
