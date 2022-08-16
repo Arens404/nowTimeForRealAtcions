@@ -1,17 +1,18 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         //1. Task
-        ArrayList<String> listA = new ArrayList<>();
+        List<String> listA = new ArrayList<>();
         listA.add("Apple");
         listA.add("Avocado");
         listA.add("Blueberries");
         listA.add("Durian");
         listA.add("Lychee");
         //2. Task
-        ArrayList<String> listB = new ArrayList<String>(4);
+        List<String> listB = new ArrayList<String>(4);
         for(int i = 0; i < 5; i++){
             listB.add(listA.get(i));
         }
