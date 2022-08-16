@@ -27,6 +27,5 @@ public class Main {
         }
         //Task 7.
         System.out.println(FirstHashMap.get("978-1-60309-453-5"));
-
     }
 }
