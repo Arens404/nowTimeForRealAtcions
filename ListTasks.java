@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Main {
+public class ListTasks {
     public static void main(String[] args) {
         //1. Task
         List<String> listA = new ArrayList<>();
