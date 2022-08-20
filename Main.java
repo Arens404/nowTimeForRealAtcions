@@ -1,63 +1,90 @@
-import java.util.HashMap;
-import java.util.Scanner;
-
+import java.util.*;
+import java.util.Map.Entry;
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        HashMap<String, String> telephoneNumbers = new HashMap<String, String>();
-        telephoneNumbers.put("William A. Lathan", "405-709-1865");
-        telephoneNumbers.put("John K. Miller", "402-247-8568");
-        telephoneNumbers.put("Hortensia E. Foster", "606-481-6467");
-        telephoneNumbers.put("Amanda D. Newland", "319-243-5613");
-        telephoneNumbers.put("Brooke P. Askew", "307-687-2982");
-        System.out.print("Select key:");
-        String keySelect = scanner.nextLine();
-        switch (keySelect){
-            case "William A. Lathan" -> {
-                System.out.println("PhoneNumber or Name? (P/N)");//2
-                if(scanner.hasNext("P")){
-                    System.out.println(telephoneNumbers.get("William A. Lathan"));
-                } else if (scanner.hasNext("N")) {
-                    System.out.println((telephoneNumbers.keySet().toArray()[2]));
-                }
-            }
-            case "John K. Miller" -> {
-                System.out.println("PhoneNumber or Name? (P/N)");
-                if(scanner.hasNext("P")){
-                    System.out.println(telephoneNumbers.get("John K. Miller"));//0
-                } else if (scanner.hasNext("N")) {
-                    System.out.println((telephoneNumbers.keySet().toArray()[0]));
-                }
-            }
-            case "Hortensia E. Foster" -> {
-                System.out.println("PhoneNumber or Name? (P/N)");
-                if(scanner.hasNext("P")){
-                    System.out.println("Hortensia E. Foster");
-                } else if (scanner.hasNext("N")) {
-                    System.out.println((telephoneNumbers.keySet().toArray()[4]));
-                }
-            }
-            case "Amanda D. Newland" -> {
-                System.out.println("PhoneNumber or Name? (P/N)");
-                if(scanner.hasNext("P")){
-                    System.out.println(telephoneNumbers.get("Amanda D. Newland"));
-                } else if (scanner.hasNext("N")) {
-                    System.out.println((telephoneNumbers.keySet().toArray()[3]));
-                }
+        List<Map<String, Object>> listOfMaps = new ArrayList<>();
 
-            }
-            case "Brooke P. Askew" -> {
-                System.out.println("PhoneNumber or Name? (P/N)");
-                if(scanner.hasNext("P")){
-                    System.out.println(telephoneNumbers.get("Brooke P. Askew"));//1
-                } else if (scanner.hasNext("N")) {
-                    System.out.println((telephoneNumbers.keySet().toArray()[1]));
-                }
+        Map<String, Object> row0 = new HashMap<>();
+        row0.put("name", "Theodor");
+        row0.put("age", 9.5);
+        row0.put("candies", 2);
+        listOfMaps.add(row0);
 
-            }
-            default -> {
-                System.out.println("I dont have this phone number and name!");
+        Map<String, Object> row1 = new HashMap<>();
+        row1.put("name", "Paul");
+        row1.put("age", 10);
+        row1.put("candies", 1);
+        listOfMaps.add(row1);
+
+        Map<String, Object> row2 = new HashMap<>();
+        row2.put("name", "Mark");
+        row2.put("age", 7);
+        row2.put("candies", 3);
+        listOfMaps.add(row2);
+
+        Map<String, Object> row3 = new HashMap<>();
+        row3.put("name", "Peter");
+        row3.put("age", 12);
+        row3.put("candies", 5);
+        listOfMaps.add(row3);
+
+        Map<String, Object> row4 = new HashMap<>();
+        row4.put("name", "Olaf");
+        row4.put("age", 12);
+        row4.put("candies", 7);
+        listOfMaps.add(row4);
+
+        Map<String, Object> row5 = new HashMap<>();
+        row5.put("name", "George");
+        row5.put("age", 3);
+        row5.put("candies", 2);
+        listOfMaps.add(row5);
+       //1. Task
+       List<String> asd = listOfName(listOfMaps);
+       for(int i = 0; i < asd.size(); i++){
+           System.out.println(asd.get(i));
+       }
+       //2. Task
+       Object result = sumOfAge(listOfMaps);
+       System.out.println(result);
+
+    }
+
+    public static List<String> listOfName(List<Map<String, Object>> student) {
+        List<String> string = new ArrayList<>();
+        for (int i = 0; i < student.size(); i++) {
+            for (Entry<String, Object> j : student.get(i).entrySet()) {
+                if (j.getKey().equals("candies")) {
+                    if ((int) j.getValue() > 4) {
+                        Object value = student.get(i).get("name");
+                        for (Entry<String, Object> entry : student.get(i).entrySet()) {
+                            if (entry.getValue() == value) {
+                                string.add((String) entry.getValue());
+                            }
+                        }
+                    }
+                }
             }
         }
+        return string;
+    }
+
+    public static double sumOfAge(List<Map<String, Object>> students) {
+        double sum = 0;
+        for (int i = 0; i < students.size(); i++) {
+            for (Entry<String, Object> j : students.get(i).entrySet()) {
+                if (j.getKey().equals("candies")) {
+                    if (Double.parseDouble(String.valueOf(j.getValue())) < 5) {
+                        Object value = (students.get(i).get("age"));
+                        for(Entry<String, Object> entry: students.get(i).entrySet()) {
+                            if (entry.getValue() == value) {
+                                sum = sum + Double.parseDouble(String.valueOf(entry.getValue()));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return sum;
     }
 }
