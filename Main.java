@@ -51,7 +51,7 @@ public class Main {
     }
 
     public static List<String> listOfName(List<Map<String, Object>> student) {
-        List<String> string = new ArrayList<>();
+        List<String> listOfStudent = new ArrayList<>();
         for (int i = 0; i < student.size(); i++) {
             for (Entry<String, Object> j : student.get(i).entrySet()) {
                 if (j.getKey().equals("candies")) {
@@ -59,14 +59,14 @@ public class Main {
                         Object value = student.get(i).get("name");
                         for (Entry<String, Object> entry : student.get(i).entrySet()) {
                             if (entry.getValue() == value) {
-                                string.add((String) entry.getValue());
+                                listOfStudent.add((String) entry.getValue());
                             }
                         }
                     }
                 }
             }
         }
-        return string;
+        return listOfStudent;
     }
 
     public static double sumOfAge(List<Map<String, Object>> students) {
