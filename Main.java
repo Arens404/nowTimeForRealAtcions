@@ -53,9 +53,9 @@ public class Main {
     public static List<String> listOfName(List<Map<String, Object>> student) {
         List<String> listOfStudent = new ArrayList<>();
         for (int i = 0; i < student.size(); i++) {
-            for (Entry<String, Object> j : student.get(i).entrySet()) {
-                if (j.getKey().equals("candies")) {
-                    if ((int) j.getValue() > 4) {
+            for (Entry<String, Object> index : student.get(i).entrySet()) {
+                if (index.getKey().equals("candies")) {
+                    if ((int) index.getValue() > 4) {
                         Object value = student.get(i).get("name");
                         for (Entry<String, Object> entry : student.get(i).entrySet()) {
                             if (entry.getValue() == value) {
