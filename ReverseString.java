@@ -4,7 +4,6 @@ public class ReverseString {
             String testString = "Have a nice day my friend";
             char[] result = ReverseString(testString);
             System.out.println(result);
-            //ReverseString(testString);
         }
     }
     public static char[] ReverseString(String userString){
