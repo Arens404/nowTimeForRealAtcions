@@ -78,9 +78,9 @@ public class Main {
             for (Entry<String, Object> j : students.get(i).entrySet()) {
                 if (j.getKey().equals("candies")) {
                     if (Double.parseDouble(String.valueOf(j.getValue())) < 5) {
-                        Double value = (Double) students.get(i).get("age");
+                        Double studentAge = (Double) students.get(i).get("age");
                         for(Entry<String, Object> entry: students.get(i).entrySet()) {
-                            if (entry.getValue() == value) {
+                            if (entry.getValue() == studentAge) {
                                 sum = sum + Double.parseDouble(String.valueOf(entry.getValue()));
                             }
                         }
