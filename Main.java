@@ -73,11 +73,12 @@ public class Main {
 
     public static double sumOfAge(List<Map<String, Object>> students) {
         double sum = 0;
-        for (int i = 0; i < students.size(); i++) {
+        int indexStart = 0;
+        for (int i = indexStart; i < students.size(); i++) {
             for (Entry<String, Object> j : students.get(i).entrySet()) {
                 if (j.getKey().equals("candies")) {
                     if (Double.parseDouble(String.valueOf(j.getValue())) < 5) {
-                        Object value = (students.get(i).get("age"));
+                        Double value = (Double) students.get(i).get("age");
                         for(Entry<String, Object> entry: students.get(i).entrySet()) {
                             if (entry.getValue() == value) {
                                 sum = sum + Double.parseDouble(String.valueOf(entry.getValue()));
