@@ -45,7 +45,7 @@ public class Main {
            System.out.println(asd.get(i));
        }
        //2. Task
-       Object result = sumOfAge(listOfMaps);
+       Double result = sumOfAge(listOfMaps);
        System.out.println(result);
 
     }
