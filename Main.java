@@ -58,9 +58,9 @@ public class Main {
                 if (index.getKey().equals("candies")) {
                     int minCandieAmount = 4;
                     if ((int) index.getValue() > minCandieAmount) {
-                        Object value = student.get(i).get("name");
+                        String studentNames = (String) student.get(i).get("name");
                         for (Entry<String, Object> entry : student.get(i).entrySet()) {
-                            if (entry.getValue() == value) {
+                            if (entry.getValue() == studentNames) {
                                 listOfStudent.add((String) entry.getValue());
                             }
                         }
