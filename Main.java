@@ -40,9 +40,9 @@ public class Main {
         row5.put("candies", 2);
         listOfMaps.add(row5);
        //1. Task
-       List<String> asd = listOfName(listOfMaps);
-       for(int i = 0; i < asd.size(); i++){
-           System.out.println(asd.get(i));
+       List<String> resultList = listOfName(listOfMaps);
+       for(int i = 0; i < resultList.size(); i++){
+           System.out.println(resultList.get(i));
        }
        //2. Task
        Double result = sumOfAge(listOfMaps);
