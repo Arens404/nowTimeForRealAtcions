@@ -77,11 +77,11 @@ public class Main {
         for (int i = indexStart; i < students.size(); i++) {
             for (Entry<String, Object> j : students.get(i).entrySet()) {
                 if (j.getKey().equals("candies")) {
-                    if (Double.parseDouble(String.valueOf(j.getValue())) < 5) {
+                    if (toDouble(toString(j.getValue())) < 5) {
                         Double studentAge = (Double) students.get(i).get("age");
                         for(Entry<String, Object> entry: students.get(i).entrySet()) {
                             if (entry.getValue() == studentAge) {
-                                sum = sum + Double.parseDouble(String.valueOf(entry.getValue()));
+                                sum = sum + toDouble(toString(entry.getValue()));
                             }
                         }
                     }
@@ -89,5 +89,15 @@ public class Main {
             }
         }
         return sum;
+    }
+    public static String toString(Object convertToString){
+        String something = String.valueOf(convertToString);
+
+        return something;
+    }
+    public static Double toDouble(String convertToDouble){
+        Double something = Double.parseDouble(convertToDouble);
+
+        return something;
     }
 }
