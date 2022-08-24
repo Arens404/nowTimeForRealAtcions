@@ -20,8 +20,9 @@ public class Main {
         }
         // 3. Task
         int q = 0;
-        System.out.println("Select an option (1-8):");
+
         while(q == 0){
+            System.out.println("Select an option (1-8):");
             if(scanner.hasNext("q")){
                 System.exit(0);
             }
