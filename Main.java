@@ -59,12 +59,14 @@ public class Main {
     public static List<String> listOfName(List<Map<String, Object>> student) {
         List<String> listOfStudent = new ArrayList<>();
         int startIndex = 0;
+        String studentCandieKeys = "candies";
+        String studentNameKeys = "name";
         for (int i = startIndex; i < student.size(); i++) {
             for (Entry<String, Object> index : student.get(i).entrySet()) {
-                if (index.getKey().equals("candies")) {
+                if (index.getKey().equals(studentCandieKeys)) {
                     int minCandieAmount = 4;
                     if ((int) index.getValue() > minCandieAmount) {
-                        String studentNames = (String) student.get(i).get("name");
+                        String studentNames = (String) student.get(i).get(studentNameKeys);
                         for (Entry<String, Object> entry : student.get(i).entrySet()) {
                             if (entry.getValue() == studentNames) {
                                 listOfStudent.add((String) entry.getValue());
@@ -80,11 +82,13 @@ public class Main {
     public static double sumOfAge(List<Map<String, Object>> students) {
         double sum = 0;
         int indexStart = 0;
+        String studentCandieKeys = "candies";
+        String studentAgeKeys = "name";
         for (int i = indexStart; i < students.size(); i++) {
             for (Entry<String, Object> j : students.get(i).entrySet()) {
-                if (j.getKey().equals("candies")) {
+                if (j.getKey().equals(studentCandieKeys)) {
                     if (toDouble(toString(j.getValue())) < 5) {
-                        Double studentAge = (Double) students.get(i).get("age");
+                        Double studentAge = (Double) students.get(i).get(studentAgeKeys);
                         for(Entry<String, Object> entry: students.get(i).entrySet()) {
                             if (entry.getValue() == studentAge) {
                                 sum = sum + toDouble(toString(entry.getValue()));
