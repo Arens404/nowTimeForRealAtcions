@@ -18,65 +18,71 @@ public class Main {
         for(int i = 0; i < 5; i++){
             listB.add(listA.get(i));
         }
-        //3. Task
-        System.out.println("Select an option (1-6):");
-        int option = scanner.nextInt();
-        switch(option){
-            case 1 -> {
-                for(int i = 0; i < 5; i++){
-                    if(listA.get(i) == "Durian"){
-                        System.out.println("True");
-                    }
-                    else {
-                        System.out.println("False");
-                    }
-                }
+        // 3. Task
+        int q = 0;
+        System.out.println("Select an option (1-8):");
+        while(q == 0){
+            if(scanner.hasNext("q")){
+                System.exit(0);
             }
-            case 2 -> {
-                listB.remove(3);
-            }
-            case 3 -> {
-                for(int i = 0; i < 5; i++){
-                    if(listA.get(i) == "Durian"){
-                        listA.add(4, "Kivifruit");
+            int option = scanner.nextInt();
+            switch(option){
+                case 1 -> {
+                    for(int i = 0; i < 5; i++){
+                        if(listA.get(i) == "Durian"){
+                            System.out.println("True");
+                        }
+                        else {
+                            System.out.println("False");
+                        }
                     }
                 }
-            }
-            case 4 -> {
-                int listACount = 0;
-                int listBCount = 0;
-                for(int i = 0; i < listA.stream().count(); i++){
-                    listACount = listACount + 1;
+                case 2 -> {
+                    listB.remove(3);
                 }
-                for(int i = 0; i < listB.stream().count(); i++){
-                    listBCount = listBCount + 1;
+                case 3 -> {
+                    for(int i = 0; i < 5; i++){
+                        if(listA.get(i) == "Durian"){
+                            listA.add(4, "Kivifruit");
+                        }
+                    }
                 }
-                if(listBCount < listACount){
-                    System.out.println("ListA is the bigger!");
-                } else {
-                    System.out.println("ListB is the bigger!");
+                case 4 -> {
+                    int listACount = 0;
+                    int listBCount = 0;
+                    for(int i = 0; i < listA.stream().count(); i++){
+                        listACount = listACount + 1;
+                    }
+                    for(int i = 0; i < listB.stream().count(); i++){
+                        listBCount = listBCount + 1;
+                    }
+                    if(listBCount < listACount){
+                        System.out.println("ListA is the bigger!");
+                    } else {
+                        System.out.println("ListB is the bigger!");
+                    }
                 }
-            }
-            case 5 -> {
-                System.out.println(listA.indexOf("Avocado"));
-            }
-            case 6 -> {
-                System.out.println(listB.indexOf("Durian"));
-            }
-            case 7 -> {
-                System.out.println("How many element u wan to add:");
-                int elementAmount = scanner.nextInt();
-                String[] elements = new String[elementAmount];
-                String currentElement = "";
-                System.out.println("Add as many items as you want to add (use , to separate the elements):");
-                for(int j = 0; j < elementAmount; j++){
-                    currentElement = scanner.nextLine();
-                    elements[j] = currentElement;
+                case 5 -> {
+                    System.out.println(listA.indexOf("Avocado"));
                 }
-                System.out.println(listB);
-            }
-            case 8 -> {
-                System.out.println(listA.get(3));
+                case 6 -> {
+                    System.out.println(listB.indexOf("Durian"));
+                }
+                case 7 -> {
+                    String[] elements = new String[2];
+                    String currentElement = "";
+                    System.out.println("Add as many items as you want to add (use , to separate the elements):");
+                    for(int j = 0; j < 2; j++){
+                        currentElement = scanner.nextLine();
+                        elements[j] = currentElement;
+                    }
+                    multipleAdd(listB, elements);
+                    listB.remove(5);
+                    System.out.println(listB);
+                }
+                case 8 -> {
+                    System.out.println(listA.get(3));
+                }
             }
         }
     }
