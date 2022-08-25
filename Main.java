@@ -2,10 +2,11 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
+    static HashMap<String, String> FirstHashMap = new HashMap<String, String>();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //Task 1.
-        HashMap<String, String> FirstHashMap = new HashMap<String, String>();
+
         FirstHashMap.put("978-1-60309-452-8", "A letter to Jo");
         FirstHashMap.put("978-1-60309-459-7", "Lupus");
         FirstHashMap.put("978-1-60309-444-3", "Red Panda and Moon Bear");
@@ -45,7 +46,7 @@ public class Main {
                 case 5 -> {
                     System.out.println("Enter the key that you wanna check:");
                     String keyCheck = scanner.nextLine();
-                    if(FirstHashMap.containsValue(FirstHashMap.get(keyCheck))){
+                    if(valueCheckForAssociatedKey(keyCheck)){
                         System.out.println("True");
                     } else {
                         System.out.println("False");
@@ -58,5 +59,11 @@ public class Main {
                 }
             }
         }
+    }
+    public static boolean valueCheckForAssociatedKey(String keyCheck){
+        if(FirstHashMap.containsValue(FirstHashMap.get(keyCheck))){
+            return true;
+        }
+        return false;
     }
 }
