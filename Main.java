@@ -12,7 +12,7 @@ public class Main {
         telephoneNumbers.put("Brooke P. Askew", "307-687-2982");
         System.out.print("Select key:");
         String keyForGetValue = scanner.nextLine();
-        System.out.println("(Press P/N)");
+        System.out.println("(Press P for phone number/Press N for the phone user name)");
         if (scanner.hasNext("P")) {
             System.out.println(telephoneNumbers.get("Phone Number: " + keyForGetValue));
         } else if (scanner.hasNext("N")) {
