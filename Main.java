@@ -2,7 +2,6 @@ import java.util.*;
 import java.util.Map.Entry;
 
 class Main {
-     @SuppressWarnings({"checkstyle:MissingSwitchDefault", "checkstyle:WhitespaceAround"})
      static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Map<String, Object>> listOfMaps = new ArrayList<>();
@@ -48,7 +47,7 @@ class Main {
             System.out.println("2 - The sum of the ages of students who have less than 5 candies");
             System.out.println("Select an option:");
             if(scanner.hasNext("q")){
-                break;
+                loopForProgram++;
             }
             int option = scanner.nextInt();
             switch (option){
