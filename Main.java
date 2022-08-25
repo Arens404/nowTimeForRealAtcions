@@ -40,22 +40,29 @@ public class Main {
         row5.put("age", 3);
         row5.put("candies", 2);
         listOfMaps.add(row5);
-        System.out.println("1 - Names of students who have more than 4 candies");
-        System.out.println("2 - The sum of the ages of students who have less than 5 candies");
-        System.out.println("Select an option:");
-        int option = scanner.nextInt();
-        switch (option){
-            case 1 -> {
-                List<String> resultList = listOfName(listOfMaps);
-                for(int i = 0; i < resultList.size(); i++){
-                    System.out.println(resultList.get(i));
+        int loopForProgram = 0;
+        while (loopForProgram == 0){
+            System.out.println("1 - Names of students who have more than 4 candies");
+            System.out.println("2 - The sum of the ages of students who have less than 5 candies");
+            System.out.println("Select an option:");
+            if(scanner.hasNext("q")){
+                break;
+            }
+            int option = scanner.nextInt();
+            switch (option){
+                case 1 -> {
+                    List<String> resultList = listOfName(listOfMaps);
+                    for(int i = 0; i < resultList.size(); i++){
+                        System.out.println(resultList.get(i));
+                    }
+                }
+                case 2 -> {
+                    Double result = sumOfAge(listOfMaps);
+                    System.out.println(result);
                 }
             }
-            case 2 -> {
-                Double result = sumOfAge(listOfMaps);
-                System.out.println(result);
-            }
         }
+
     }
 
     public static List<String> listOfName(List<Map<String, Object>> student) {
