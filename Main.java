@@ -20,7 +20,7 @@ public class Main {
             System.out.println("6 - Get a key value");
             System.out.println("Select an option:");
             if(scanner.hasNext("q")){
-                break;
+                programLoopValue++;
             }
             int selection = scanner.nextInt();
             switch(selection){
