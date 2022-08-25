@@ -10,8 +10,8 @@ public class Main {
         FirstHashMap.put("978-1-60309-459-7", "Lupus");
         FirstHashMap.put("978-1-60309-444-3", "Red Panda and Moon Bear");
         FirstHashMap.put("978-1-60309-461-0", "The Lab");
-        int u = 0;
-        while(u == 0){
+        int programLoopValue = 0;
+        while(programLoopValue == 0){
             System.out.println("1 - out print the map values and keys");
             System.out.println("2 - remove an element from the map");
             System.out.println("4 - put two an element in to the map");
@@ -19,7 +19,7 @@ public class Main {
             System.out.println("6 - Get a key value");
             System.out.println("Select an option:");
             if(scanner.hasNext("q")){
-                System.exit(0);
+                break;
             }
             int selection = scanner.nextInt();
             switch(selection){
