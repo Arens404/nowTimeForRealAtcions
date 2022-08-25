@@ -11,12 +11,12 @@ public class Main {
         telephoneNumbers.put("Amanda D. Newland", "319-243-5613");
         telephoneNumbers.put("Brooke P. Askew", "307-687-2982");
         System.out.print("Select key:");
-        String keyForGetValue = scanner.nextLine();
+        String selectedKey = scanner.nextLine();
         System.out.println("(Press P for phone number/Press N for the phone user name)");
         if (scanner.hasNext("P")) {
-            System.out.println(telephoneNumbers.get("Phone Number: " + keyForGetValue));
+            System.out.println(telephoneNumbers.get("Phone Number: " + selectedKey));
         } else if (scanner.hasNext("N")) {
-            String value = telephoneNumbers.get(keyForGetValue);
+            String value = telephoneNumbers.get(selectedKey);
             for(Entry<String,String> entry: telephoneNumbers.entrySet()){
                 if(entry.getValue() == value){
                     System.out.println("Name: " + entry.getKey());
