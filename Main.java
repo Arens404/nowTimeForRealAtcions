@@ -1,7 +1,9 @@
 import java.util.*;
 import java.util.Map.Entry;
-public class Main {
-    public static void main(String[] args) {
+
+class Main {
+     @SuppressWarnings({"checkstyle:MissingSwitchDefault", "checkstyle:WhitespaceAround"})
+     static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Map<String, Object>> listOfMaps = new ArrayList<>();
 
@@ -64,18 +66,17 @@ public class Main {
         }
 
     }
-
     public static List<String> listOfName(List<Map<String, Object>> student) {
         List<String> listOfStudent = new ArrayList<>();
         int startIndex = 0;
-        String CandieKey = "candies";
-        String NameKey = "name";
+        String minCandieKey = "candies";
+        String nameOfStudents = "name";
         for (int i = startIndex; i < student.size(); i++) {
             for (Entry<String, Object> index : student.get(i).entrySet()) {
-                if (index.getKey().equals(CandieKey)) {
+                if (index.getKey().equals(minCandieKey)) {
                     int minCandieAmount = 4;
                     if ((int) index.getValue() > minCandieAmount) {
-                        String studentNames = (String) student.get(i).get(NameKey);
+                        String studentNames = (String) student.get(i).get(nameOfStudents);
                         for (Entry<String, Object> entry : student.get(i).entrySet()) {
                             if (entry.getValue() == studentNames) {
                                 listOfStudent.add((String) entry.getValue());
@@ -87,18 +88,17 @@ public class Main {
         }
         return listOfStudent;
     }
-
     public static double sumOfAge(List<Map<String, Object>> students) {
         double sum = 0;
         int indexStart = 0;
-        String CandieKey = "candies";
-        String AgeKey = "name";
+        String minCandiesKey = "candies";
+        String ageOfStudents = "name";
         int maxCandieCount = 5;
         for (int i = indexStart; i < students.size(); i++) {
             for (Entry<String, Object> j : students.get(i).entrySet()) {
-                if (j.getKey().equals(CandieKey)) {
-                    if (toDouble(toString(j.getValue())) < maxCandieCount) {
-                        Double studentAge = (Double) students.get(i).get(AgeKey);
+                if (j.getKey().equals(minCandiesKey)) {
+                    if (objectToDouble(j.getValue()) < maxCandieCount) {
+                        Double studentAge = (Double) students.get(i).get(ageOfStudents);
                         for(Entry<String, Object> entry: students.get(i).entrySet()) {
                             if (entry.getValue() == studentAge) {
                                 sum = sum + objectToDouble(entry.getValue());
@@ -110,19 +110,14 @@ public class Main {
         }
         return sum;
     }
-    public static String toString(Object convertToString){
-        String something = String.valueOf(convertToString);
-
-        return something;
-    }
     public static Double toDouble(String convertToDouble){
-        Double something = Double.parseDouble(convertToDouble);
+        Double valueOfDouble = Double.parseDouble(convertToDouble);
 
-        return something;
+        return valueOfDouble;
     }
     public static Double objectToDouble(Object convertObjectToDouble){
-        double something = toDouble(toString(convertObjectToDouble));
+        double objectValueInDouble = toDouble(String.valueOf(convertObjectToDouble));
 
-        return something;
+        return objectValueInDouble;
     }
 }
