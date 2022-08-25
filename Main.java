@@ -94,7 +94,7 @@ public class Main {
                         Double studentAge = (Double) students.get(i).get(AgeKey);
                         for(Entry<String, Object> entry: students.get(i).entrySet()) {
                             if (entry.getValue() == studentAge) {
-                                sum = sum + toDouble(toString(entry.getValue()));
+                                sum = sum + objectToDouble(entry.getValue());
                             }
                         }
                     }
@@ -110,6 +110,11 @@ public class Main {
     }
     public static Double toDouble(String convertToDouble){
         Double something = Double.parseDouble(convertToDouble);
+
+        return something;
+    }
+    public static Double objectToDouble(Object convertObjectToDouble){
+        double something = toDouble(toString(convertObjectToDouble));
 
         return something;
     }
