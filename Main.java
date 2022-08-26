@@ -8,7 +8,7 @@ import java.util.Scanner;
 class Main { final static List<Map<String, Object>> listOfMaps = new ArrayList<>();
   final static Scanner scanner = new Scanner(System.in);
 
-  static void main(String[] args) {
+  public static void main(String[] args) {
 
     Map<String, Object> row0 = new HashMap<>();
     row0.put("name", "Theodor");
@@ -57,8 +57,8 @@ class Main { final static List<Map<String, Object>> listOfMaps = new ArrayList<>
       switch (option) {
         case 1 -> {
           List<String> resultList = listOfName(listOfMaps);
-          for (int i = 0; i < resultList.size(); i++) {
-            System.out.println(resultList.get(i));
+          for (String s : resultList) {
+            System.out.println(s);
           }
         }
         case 2 -> {
