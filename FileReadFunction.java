@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileManagementFunction { public static Path myFilePath;
+public class FileReadFunction { public static Path myFilePath;
 
   public static final Scanner scanner = new Scanner(System.in);
 
@@ -14,22 +14,15 @@ public class FileManagementFunction { public static Path myFilePath;
     System.out.println("Enter your file name:");
     String userFileName = scanner.nextLine();
     myFilePath = Paths.get(userFileName);
-    int linesCountResult = countLines(userFileName);
-    System.out.println(linesCountResult);
-  }
-
-  public static int countLines(String userFile) {
-    int count = 0;
     try {
-      List<String> content = Files.readAllLines(Path.of(userFile));
+      List<String> content = Files.readAllLines(myFilePath);
       for (int i = 0; i < content.size(); i++) {
-        count++;
+        System.out.println(content.get(i));
       }
     } catch (NoSuchFileException NoSuchFileException) {
-      System.out.print("This file is doesn't exists -> lines int the file:");
+      System.out.print("Unable to read file: " + myFilePath.getFileName());
     } catch (IOException e) {
       e.printStackTrace();
     }
-    return count;
   }
 }
