@@ -3,16 +3,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
-import java.util.Map.Entry;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class FileReadFunction { public static Path myFilePath;
 
   static Map<Integer, Integer> NumberRate = new HashMap<>(100);
 
-  static void fillUpMap(String number){
+  static void fillUpMap(String number) {
     int lotteryNumber = Integer.parseInt(number);
-    if(NumberRate.containsKey(lotteryNumber)) {
+    if (NumberRate.containsKey(lotteryNumber)) {
       NumberRate.replace(lotteryNumber, NumberRate.get(lotteryNumber) + 1);
     } else {
       NumberRate.put(lotteryNumber, 1);
@@ -27,7 +29,7 @@ public class FileReadFunction { public static Path myFilePath;
 
     try {
       BufferedReader reader = new BufferedReader(new FileReader(String.valueOf(myFilePath)));
-      while((line = reader.readLine()) != null) {
+      while ((line = reader.readLine()) != null) {
         oneLine = line.split(";");
 
         fillUpMap(oneLine[11]);
@@ -36,28 +38,25 @@ public class FileReadFunction { public static Path myFilePath;
         fillUpMap(oneLine[14]);
         fillUpMap(oneLine[15]);
 
-      } reader.close();
-/*
-      System.out.println("Number rates: ");
-      for (Integer item: NumberRate.values()) {
-        System.out.println(item);
       }
-*/
+
+      reader.close();
 
       int max = 0;
       ArrayList<Integer> fiveBestNum = new ArrayList<>();
-      for(Integer numbers: NumberRate.keySet()){
-        if(NumberRate.get(numbers) > max){
+      for (Integer numbers: NumberRate.keySet()) {
+        if (NumberRate.get(numbers) > max) {
           max = NumberRate.get(numbers);
+          fiveBestNum.add(NumberRate.get(numbers));
+        } else if (max > numbers - 4) {
           fiveBestNum.add(NumberRate.get(numbers));
         }
       }
 
-      System.out.println("idk");
-      for(int i = 0; i < 5; i++){
+      System.out.println("The five most occurring number: ");
+      for (int i = 0; i < 5; i++) {
         System.out.println(fiveBestNum.get(i));
       }
-
 
     } catch (IOException e) {
       e.printStackTrace();
