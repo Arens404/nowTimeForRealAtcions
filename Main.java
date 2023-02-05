@@ -11,6 +11,5 @@ class Main {
     monstersInList.sortByName(monstersInList);
     monstersInList.writeElements();
     System.out.println(monstersInList.size());
-
   }
 }
