@@ -36,14 +36,6 @@ class Main {
         }
       }
     }
-    /*System.out.println("3. Task:");
-    int count = 0;
-    for (Color colorCode: colorList) {
-      int colorCodeSum = colorCode.getRed() + colorCode.getGreen() + colorCode.getBlue();
-      if( colorCodeSum > 600) {
-        count++;
-      }
-    }
-    System.out.println("The brightest pixel count is: " + count);*/
+
   }
 }
