@@ -1,15 +1,49 @@
-class Main {
-  public static void main(String[] args) {
-    Monsters monsterOne = new Monsters("Alien",false,100,7,"evil"); //1
-    Monsters monsterTwo = new Monsters("Mind flayer", false, 1000, 3, "evil"); //5
-    Monsters monsterThree = new Monsters("Cthulhu",false,1500,5,"evil"); //4
-    Monsters monsterFour = new Monsters("Celestial Dragon", true,2000,8,"neutral"); //3
-    Monsters monsterFive = new Monsters("Bloodsucker", true,50,6,"evil"); //2
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
-    MonsterList monstersInList = new MonsterList();
-    monstersInList.addAll(new Monsters[]{monsterOne, monsterTwo, monsterThree, monsterFour, monsterFive});
-    monstersInList.sortByName(monstersInList);
-    monstersInList.writeElements();
-    System.out.println(monstersInList.size());
+class Main {
+  public static Scanner scanner = new Scanner(System.in);
+  public static void main(String[] args) {
+    List<Color> colorList = new ArrayList<>();
+    try{
+      BufferedReader reader = new BufferedReader(new FileReader("kep.txt"));
+      int index=0;
+      String line;
+      while ((line = reader.readLine()) != null) {
+        String[] colors = line.split(" ");
+        colorList.add(new Color(Integer.parseInt(colors[index]), Integer.parseInt(colors[index+1]), Integer.parseInt(colors[index+2])));
+        index+=3;
+      }
+      reader.close();
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    System.out.println("2. Task:");
+    System.out.println("Give me a pixel coordinates!");
+    System.out.print("Row:");
+    int coordinateInputX = Integer.parseInt(scanner.next());
+    System.out.print("Column:");
+    int coordinateInputY = Integer.parseInt(scanner.next());
+    for (int i = 0; i < colorList.size(); i++) {
+      if (i == coordinateInputX) {
+        for (int j = 0; j < colorList.size(); j++) {
+          if (j == coordinateInputY) {
+            System.out.println("The pixel color RGB(" + colorList.get(j).getBlue() + "," + colorList.get(j).getGreen() + "," + colorList.get(j).getRed() + ")");
+          }
+        }
+      }
+    }
+    /*System.out.println("3. Task:");
+    int count = 0;
+    for (Color colorCode: colorList) {
+      int colorCodeSum = colorCode.getRed() + colorCode.getGreen() + colorCode.getBlue();
+      if( colorCodeSum > 600) {
+        count++;
+      }
+    }
+    System.out.println("The brightest pixel count is: " + count);*/
   }
 }
